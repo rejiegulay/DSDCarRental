@@ -9,6 +9,41 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.logo {
+    width: 350px; /* Adjust the width */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: -15px;
+	position: inherit;
+    display: block; /* Center if needed */
+}
+
+header {
+    text-align: center; /* Center the logo within the header */
+    
+}
+
+@media (max-width: 600px) {
+    .logo {
+        width: 250px; /* Resize for smaller screens */
+		margin-top: -8px;
+    }
+}
+
+.footer-logo {
+    width: 250px; /* Adjust the logo width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Add space below the logo */
+}
+@media (max-width: 600px) {
+    .footer-logo {
+        width: 250px; /* Resize the logo for smaller screens */
+    }
+}
+
+
+
+
 p {
 	margin-bottom: 0px;
 	font-size: 14px;
@@ -325,6 +360,7 @@ header .navbar {
 	position: absolute;
 	right: 35px;
 	top: 32px;
+	margin: -5px;
 }
 .navbar .navbar-toggler-icon:after {
 	content: '\f0c9';
@@ -785,7 +821,7 @@ ul.slick-dots {
 	color: #e49c00;
 }
 .testimonial-item img {
-	max-width: 60px;
+	max-width: 90px;
 	border-radius: 50%;
 	margin: 25px auto 0px auto;
 }
