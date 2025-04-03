@@ -1298,9 +1298,55 @@ footer .contact-form button.filled-button:hover {
 
 }
 
+a {
+    
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
 
+}
 
+.border-bottom {
+    border-bottom: 1px solid #dee2e6 !important;
+}
 
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: .0rem;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .5rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.dropdown-item:hover {
+	background-color: #e49c00;
+	font-weight: 600;
+}
 .dropdown-item.active, 
 .dropdown-item:active {
 	background-color: #e49c00;
