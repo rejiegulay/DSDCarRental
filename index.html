@@ -538,6 +538,36 @@
         });
     });
 </script>
+
+    <script>
+      const form = document.getElementById('formSubmitForm');
+const message = document.getElementById('submitMessage');
+
+form.addEventListener('submit', (event) => {
+    // Let FormSubmit handle the form action
+    event.preventDefault();
+
+    // Fetch API to submit form data
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+    })
+        .then((response) => {
+            if (response.ok) {
+                message.style.display = 'block';
+                message.textContent = 'Form submitted successfully! Thank you.';
+                form.reset(); // Clear the form
+            } else {
+                alert('There was an issue submitting the form.');
+            }
+        })
+        .catch((error) => {
+            console.error('Error submitting the form:', error);
+            alert('Submission failed. Please try again.');
+        });
+});
+
+    </script>
     
   </body>
 </html>
