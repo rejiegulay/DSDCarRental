@@ -512,7 +512,7 @@
             <button type="submit" id="form-submit" class="btn btn-primary">Book Now</button>
              </fieldset>
              <input type="hidden" name="_captcha" value="false"> 
-            <p id="submitMessage" style="display: block; color: black; margin-top: 20px; font-style: italic;"></p>
+            <p id="submitMessage" style="display: none; color: black; margin-top: 20px; font-style: italic;"></p>
                     <input type="hidden" name="_next" value="https://rejiegulay.github.io/DSDCarRental/index.html">
               </form>
             
@@ -535,7 +535,35 @@
     <script src="assets/js/accordions.js"></script>
   
     
-    
+       <script>
+      const form = document.getElementById('contact');
+const message = document.getElementById('submitMessage');
+
+form.addEventListener('submit', (event) => {
+    // Let FormSubmit handle the form action
+    event.preventDefault();
+
+    // Fetch API to submit form data
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+    })
+        .then((response) => {
+            if (response.ok) {
+                message.style.display = 'block';
+                message.textContent = 'Your message was submitted successfully! Thank you.';
+                form.reset(); // Clear the form
+            } else {
+                alert('There was an issue submitting the Message.');
+            }
+        })
+        .catch((error) => {
+            console.error('Error submitting the Message:', error);
+            alert('Submission failed. Please try again.');
+        });
+});
+
+    </script>
  
 
     <script>
