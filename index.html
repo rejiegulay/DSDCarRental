@@ -515,7 +515,7 @@
             <p id="submitMessage" style="display: none; color: black; margin-top: 20px; font-style: italic;"></p>
                     <input type="hidden" name="_next" value="https://rejiegulay.github.io/DSDCarRental/index.html">
               </form>
-            <div id="submitMessage">Your message was submitted successfully!</div>
+            
 
           </div>
           </div>
@@ -552,7 +552,7 @@ form.addEventListener('submit', (event) => {
         .then((response) => {
             if (response.ok) {
                 message.style.display = 'block';
-                message.textContent = 'Your Message submitted successfully! Thank you.';
+                message.textContent = 'Your message was submitted successfully! Thank you.';
                 form.reset(); // Clear the form
             } else {
                 alert('There was an issue submitting the Message.');
