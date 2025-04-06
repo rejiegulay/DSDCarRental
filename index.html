@@ -564,6 +564,37 @@ form.addEventListener('submit', (event) => {
 });
 
     </script>
+
+     <script>
+      const form = document.getElementById('exampleModal');
+const message = document.getElementById('submitMessage');
+
+form.addEventListener('submit', (event) => {
+    // Let FormSubmit handle the form action
+    event.preventDefault();
+
+    // Fetch API to submit form data
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+    })
+        .then((response) => {
+            if (response.ok) {
+                message.style.display = 'block';
+                message.textContent = 'Your Message submitted successfully! Thank you.';
+                form.reset(); // Clear the form
+            } else {
+                alert('There was an issue submitting the Message.');
+            }
+        })
+        .catch((error) => {
+            console.error('Error submitting the Message:', error);
+            alert('Submission failed. Please try again.');
+        });
+});
+
+    </script>
+    
     <script>
 
     <script language = "text/Javascript"> 
