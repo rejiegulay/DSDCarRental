@@ -445,6 +445,14 @@
           </div>
           <div class="modal-body">
             <form id="contact" action="https://formsubmit.co/gulayrejie@gmail.com"  method="POST">
+              <div class="form-group">
+                            <label for="carModel">Car Model:</label>
+                            <select id="carModel" name="carModel" class="form-control" required>
+                                <option value="" disabled selected>Select a car model</option>
+                            </select>
+                        </div>
+                        
+
               
                   <div class="row">
                    <div class="col-md-6">
@@ -570,6 +578,19 @@ form.addEventListener('submit', (event) => {
  
 
     <script>
+ const carModels = ["Toyota Corolla", "Honda Civic", "Ford Mustang", "Tesla Model 3"];
+        const carModelDropdown = document.getElementById('carModel');
+
+        // Populate dropdown with car models
+        carModels.forEach(model => {
+            const option = document.createElement('option');
+            option.value = model;
+            option.textContent = model;
+            carModelDropdown.appendChild(option);
+        });
+
+
+      
         const form = document.getElementById('contact');
 const message = document.getElementById('submitMessage');
 
