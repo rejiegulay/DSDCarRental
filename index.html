@@ -577,6 +577,8 @@ form.addEventListener('submit', (event) => {
     fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
+       $('#successModal').modal('show'); // Show the modal
+
     })
         .then((response) => {
             if (response.ok) {
