@@ -565,37 +565,35 @@ form.addEventListener('submit', (event) => {
 
     </script>
 
-     <script>
-      const form = document.getElementById('contact');
-const message = document.getElementById('submitMessage');
+    <script>
+        const form = document.getElementById('contact');
+        const message = document.getElementById('submitMessage');
 
-form.addEventListener('submit', (event) => {
-    // Let FormSubmit handle the form action
-    event.preventDefault();
+        form.addEventListener('submit', (event) => {
+            // Let FormSubmit handle the form action
+            event.preventDefault();
 
-    // Fetch API to submit form data
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-       $('#exampleModal').modal('show'); // Show the modal
-
-    })
-        .then((response) => {
-            if (response.ok) {
-                message.style.display = 'block';
-                message.textContent = 'Your Message submitted successfully! Thank you.';
-                form.reset(); // Clear the form
-            } else {
-                alert('There was an issue submitting the Message.');
-            }
-        })
-        .catch((error) => {
-            console.error('Error submitting the Message:', error);
-            alert('Submission failed. Please try again.');
+            // Fetch API to submit form data
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        message.style.display = 'block';
+                        message.textContent = 'Your message was submitted successfully! Thank you.';
+                        form.reset(); // Clear the form
+                    } else {
+                        alert('There was an issue submitting the message.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error submitting the message:', error);
+                    alert('Submission failed. Please try again.');
+                });
         });
-});
-
     </script>
+
     
     <script>
 
