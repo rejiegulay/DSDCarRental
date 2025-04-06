@@ -512,7 +512,7 @@
             <button type="submit" id="form-submit" class="btn btn-primary">Book Now</button>
              </fieldset>
              <input type="hidden" name="_captcha" value="false"> 
-            <p id="submitMessage" style="display: none; color: black; margin-top: 20px; font-style: italic;"></p>
+            <p id="submitMessage" style="display: block; color: black; margin-top: 20px; font-style: italic;"></p>
                     <input type="hidden" name="_next" value="https://rejiegulay.github.io/DSDCarRental/index.html">
               </form>
             
@@ -572,6 +572,7 @@ const message = document.getElementById('submitMessage');
 
 form.addEventListener('submit', (event) => {
     // Prevent default form submission
+   console.log('Form submission intercepted');
     event.preventDefault();
 
     // Use Fetch API to handle form submission
@@ -581,7 +582,11 @@ form.addEventListener('submit', (event) => {
     })
         .then((response) => {
             if (response.ok) {
+              console.log('Before: ', message.style.display);
+
                 message.style.display = 'block'; // Show the success message
+              console.log('After: ', message.style.display);
+
                 message.textContent = 'Your booking request has been sent successfully! Thank you.';
                 form.reset(); // Clear the form
             } else {
