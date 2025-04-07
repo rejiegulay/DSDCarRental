@@ -643,8 +643,8 @@ ul.slick-dots {
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary:active:focus{
-	opacity: 0.4;
-	border-color: #e49c00;
+	
+	border-color: #085f61;
 	background-color: #085f61;
 }
 
